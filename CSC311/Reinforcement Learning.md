@@ -1,0 +1,1 @@
+Learning system (agent) interacts with the world and learns to maximize a scalar reward signal
