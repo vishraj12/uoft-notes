@@ -1,1 +1,3 @@
-##### This repo is a backup of my local notes on Obsidian as a $3^{rd}$ year Computer Science & Psychology student at UofT. #####
+This repo is a backup of my local notes on Obsidian as a $3^{rd}$ year Computer Science & Psychology student at UofT. 
+
+more to come soon...
