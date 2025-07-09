@@ -159,3 +159,136 @@ class Solution: #their solution -> uses the len of nums2 as a counter
 				k -= 1 
 				j -= 1
 ```
+
+#### 27. Remove Element ####
+``` python
+class Solution: #simple solution, I over-complicated it
+	def removeElement(self, nums: list[int], val: int) -> int: #their solution -> couldn't do it on my own
+		i = 0 
+		for num in nums: 
+			if num != val: 
+				nums[i] = num 
+				i += 1 
+		return i
+```
+
+#### 26. Remove Duplicates from Sorted Array ####
+``` python
+class Solution(object): #my solution
+    def removeDuplicates(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        j = 1
+        i = 0
+        while i < len(nums) - 1:
+            if nums[i] == nums[i + 1]:
+                i += 1
+            else:
+                nums[j] = nums[i + 1]
+                j += 1
+                i += 1
+        return j
+
+class Solution: #their solution
+	def removeDuplicates(self, nums: list[int]) -> int: 
+		i = 0 
+		for num in nums: 
+			if i < 1 or num > nums[i - 1]: 
+				nums[i] = num 
+				i += 1 
+		return i        
+```
+
+#### 1346. Check if N and Its Double Exist
+``` python
+class Solution(object): #my solution
+    def checkIfExist(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        if not arr: 
+            return False
+        
+        for i in range(0, len(arr)):
+            for j in range(0, len(arr)):
+                if i != j and arr[i] == 2 * arr[j]:
+                    return True
+        return False
+
+class Solution: #their solution
+	def checkIfExist(self, arr: list[int]) -> bool: 
+		seen = set() 
+		for a in arr: 
+			if a * 2 in seen or a % 2 == 0 and a // 2 in seen: 
+				return True 
+			seen.add(a) 
+		return False
+```
+
+#### 941. Valid Mountain Array
+``` python
+class Solution(object): #my solution
+    def validMountainArray(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: bool
+        """
+        if not arr or len(arr) < 3:
+            return False
+            
+        tip = max(arr)
+        tip_index = arr.index(tip)
+        
+        if tip_index == 0 or tip_index == len(arr) - 1:
+            return False
+            
+        for i in range(1, tip_index):
+            if arr[i - 1] >= arr[i]:
+                return False
+        for j in range(tip_index + 1, len(arr)):
+            if arr[j - 1] <= arr[j]:
+                return False
+        
+        return True
+
+class Solution: #their solution
+	def validMountainArray(self, arr: list[int]) -> bool: 
+		if len(arr) < 3: 
+			return False 
+		
+		l = 0 
+		r = len(arr) - 1 
+		
+		while l + 1 < len(arr) and arr[l] < arr[l + 1]: 
+			l += 1
+		while r > 0 and arr[r] < arr[r - 1]: 
+			r -= 1 
+		
+		return l > 0 and r < len(arr) - 1 and l == r
+```
+
+#### 1299. Replace Elements with Greatest Element on Right Side ####
+``` python
+class Solution(object): #chat gpt solution
+    def replaceElements(self, arr):
+        """
+        :type arr: List[int]
+        :rtype: List[int]
+        """
+        max_right = -1 
+        for i in range(len(arr) - 1, -1, -1):
+            curr = max_right
+            max_right = max(max_right, arr[i])
+            arr[i] = curr
+        return arr
+
+class Solution: #their solution
+	def replaceElements(self, arr: list[int]) -> list[int]: 
+		maxOfRight = -1 
+		for i in reversed(range(len(arr))): 
+			arr[i], maxOfRight = maxOfRight, max(maxOfRight, arr[i]) 
+		return arr
+```
