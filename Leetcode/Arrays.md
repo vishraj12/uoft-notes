@@ -292,3 +292,135 @@ class Solution: #their solution
 			arr[i], maxOfRight = maxOfRight, max(maxOfRight, arr[i]) 
 		return arr
 ```
+
+#### 283. Move Zeroes ####
+``` python
+class Solution(object): #their answer
+    def moveZeroes(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: None Do not return anything, modify nums in-place instead.
+        """
+        j = 0
+    
+        for i in range(len(nums)):
+            if nums[i] != 0:
+                nums[j] = nums[i]
+                j += 1
+    
+        for i in range(j, len(nums)):
+            nums[i] = 0
+                
+```
+
+#### 905. Sort Array by Parity
+``` python
+class Solution(object): #my answer
+    def sortArrayByParity(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        start = 0
+        end = len(nums) - 1
+        while start < end:
+            if nums[start] % 2 != 0:
+                nums[start], nums[end] = nums[end], nums[start]
+                end -= 1
+            if nums[start] % 2 == 0:    
+                start += 1
+        return nums
+
+class Solution: #their solution
+	def sortArrayByParity(self, nums: list[int]) -> list[int]: 
+		l = 0 
+		r = len(nums) - 1 
+		while l < r: 
+			if nums[l] % 2 == 1 and nums[r] % 2 == 0: 
+				nums[l], nums[r] = nums[r], nums[l] 
+			if nums[l] % 2 == 0: 
+				l += 1 
+			if nums[r] % 2 == 1: 
+				r -= 1 
+		return nums
+```
+
+#### 1051. Height Checker ####
+``` python
+class Solution(object): #my solution but not the best space complexity
+    def heightChecker(self, heights):
+        """
+        :type heights: List[int]
+        :rtype: int
+        """
+        count = 0
+        sort_no = sorted(heights)
+        for i in range(len(heights)):
+            if sort_no[i] != heights[i]:
+                count += 1
+        return count
+
+class Solution: 
+	def heightChecker(self, heights: list[int]) -> int: 
+		ans = 0 
+		currentHeight = 1 
+		count = [0] * 101 
+		
+		for height in heights: 
+			count[height] += 1 
+		
+		for height in heights: 
+			while count[currentHeight] == 0: 
+				currentHeight += 1 
+			if height != currentHeight: 
+				ans += 1 
+			count[currentHeight] -= 1 
+		return ans
+```
+
+#### 414. Third Maximum Number ####
+``` python
+class Solution(object): # my solution kinda but needed chatgpt help
+    def thirdMax(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+        first = second = third = float('-inf')
+        for num in nums:
+            if num in (first, second, third):
+                continue
+            if num > first:
+                third = second
+                second = first
+                first = num
+            elif num > second:
+                third = second
+                second = num
+            elif num > third:
+                third = num
+        if third == float('-inf'):
+            return first
+        else:
+            return third
+```
+
+#### 448. Find All Numbers Disappeared in an Array ####
+``` python
+class Solution(object): #chat gpt solution 
+    def findDisappearedNumbers(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: List[int]
+        """
+        full_range = set(range(1, len(nums) + 1))
+        nums_set = set(nums)
+        return list(full_range - nums_set) 
+
+class Solution: #insanely smart could not think on my own
+	def findDisappearedNumbers(self, nums: list[int]) -> list[int]: 
+		for num in nums: 
+			index = abs(num) - 1 
+			nums[index] = -abs(nums[index]) 
+		return [i + 1 for i, num in enumerate(nums) if num > 0]
+```
