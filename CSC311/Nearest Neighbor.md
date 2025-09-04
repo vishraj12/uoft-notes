@@ -1,9 +1,12 @@
 - For each input $x \in R^d$, we have a corresponding label *y*
 - Our goal: For a new query input x, we need to assign the point to a label
 - Idea: Set the label of the query input to be the label of the closest point (neighbor) in the training set.
+- All you do is calculate distance for each point and just choose the one that is closest to the new data point x. 
 ##### Defining Neighbor
 - As inputs $x \in R^d$, Euclidean distance can be utilized:
 	- $distance(x^{(a)}, x^{(b)}) = ||x^{(a)} - x^{(b)}||_2 = \sqrt{\sum_{j = 1}^d (x_j^{(a)} - x_j^{(b)})^2}$
+- Can also use cosine similarity (LOOK AT THIS LATER) -> measures the angle between two vectors
+- Manhattan Distance -> look into this
 - Find the nearest input vector to x in the training set and copy its label.
 ##### Pseudocode for Nearest Neighbor 
 - Given the query $x^q \in R^d$ and training set $|D| = N$:
@@ -21,10 +24,20 @@
 return the index (midx) and distance (mindist)
 
 ##### Decision Boundaries
-- Can be visualized using a Voronoi diagram:
+- Can be visualized using a Voronoi diagram: -> LOOK INTO THIS IN DEPTH
 	- Discretize space into tiny boxes and for each box, run the KNN algorithm to classify it
 	- Merge boxes close together that have the same label
 - Decision boundary is the boundary between regions of input space assigned to different categories
+	- A region where the classifier output is ambiguous
+	- A dividing line where the classifier switches predictions
 ##### Noise
 - The algorithm is sensitive to label noise or mis-labeled data (class noise) 
-	- Solution: Smooth by having k nearest neighbors vote
+- Solution: Smooth by having k nearest neighbors vote
+##### K Nearest NeighbourS
+- Instead of using closest point, use multiple closest points 
+- K is a hyperparameter which is: 
+	- A setting or configuration external to the model
+	- Chosen before training
+	- Governs how the model is learned
+	- Influences model behaviour and performance
+- 
