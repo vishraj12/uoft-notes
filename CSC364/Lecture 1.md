@@ -1,0 +1,125 @@
+### What is security?
+- Enforcing a desired property in the presence of an attacker -> e.g. data confidentiality, user privacy, data and computation integrity, authentication, availability (services/data remain available)
+### Approaching Computer Security
+- Threat Model
+	- Who are the adversaries?
+	- Their goals?
+	- Their capabilities?
+- Goal -> Understand what a system's security goals are
+	- confidentiality/integrity/availability
+- Implementation: Understand and deploy countermeasures
+	- mechanisms and operations
+- Security is expensive
+### Importance of Security
+- Physical safety
+	- Pacemaker hack can kill through a laptop
+	- Flight safety
+	- Smart car accidents due to security breaches
+- Confidentiality/privacy
+	- Companies selling personal details
+- Functionality
+- Protecting assets
+- Successful business
+- Country's economy and safety
+	- Hacking other countries' systems
+#### What is hackable?
+- Virtually every piece of software
+- Internet-connected devices are extra vulnerable
+- Always assume every system is a target
+	- e.g. Casino was breached through a smart fish-tank thermometer
+#### Security vs. Correctness
+- Correctness: Works in average cases
+	- Does it work for typical users?
+- Security: Must hold in worst-case situations
+	- Does it resist every adversary?
+	- Corner cases/ edge cases matter more in security
+- Security requires defending against all possible attacks in the model
+#### How Things Can Go Wrong
+- Insufficient attack models 
+	- e.g. DES ($2^{56}$ keys assumed secure)
+	- Computational power grew -> DES broke 
+- Insufficient security goals
+	- e.g. side-channel attacks on ISAs
+	- Different cycle counts -> leaked sensitive info
+- Limits of Implementation
+	- Some attacks always fall outside the model
+	- Implementations can never defend against all threats
+### General principles of secure systems design
+- Know your Threat Model
+	- Mode -> define who your attacker is and what resources they have
+	- People are the attackers
+	- People attack systems for:
+		- Money 
+		- Politics
+		- Retaliation -> surprisingly common
+		- Curiosity/fun
+		- Gathering intelligence
+	- Assume the attacker:
+		- Can interact with systems unnoticed
+		- Knows general information 
+		- Can get lucky
+		- May coordinate across systems
+		- Has resources suited to their profile
+		- Will escalate privileges if possible
+- What code can we trust?
+	- Can we trust the login program? -> No
+		- Can have a backdoor
+		- Mitigation -> Recompile from a trusted source
+	- Can we trust the source code?
+		- Not fully -> inspect_recompile helps
+	- We can't trust anything as any component can be compromised -> have to trust something to make progress
+	- Trusted Computing Base (TCB):
+		- Define a minimal set of components assumed trustworthy
+		- Build all other security guarantees on top of the TCB
+		- Properties of TCB:
+			- Correctness -> works as intended
+			- Completeness -> can't be bypassed
+			- Security -> can't be tampered with 
+		- Keep the TCB small and simple
+			- easier to write, reason about and audit
+- Consider Human Factors
+	- Users
+		- Prefer convenience
+		- If unusable -> unused or subverted
+	- Programmers
+		- Make mistakes
+		- Tools make mistakes easier
+	- Everyone else
+		- Social engineering exploits trust and access
+	- Design takeaway
+		- Tools must be usable and fool-proof
+- Security is Economics
+	- Cost/benefit analyses appear in security:
+		- Security decisions are cost/benefit tradeoffs
+		- Goal: Make the attack cost -> expected reward
+		- More security usually costs more
+		- If attack costs > benefit -> attackers won't bother
+- Detect If You Can't Prevent
+	- Deterrence: Stop the attack before it happens
+	- Prevention: Stop the attack as it happens
+	- Detection: Learn that there was an attack (after it happened)
+		- If you can't stop the attack from happening, at least know that the attack has happened
+	- Response: Do something after detecting
+- Defense in Depth
+	- Layers of defense (e.g. 2MFA)
+	- Attack must breach all layers to succeed 
+	- Security is economics
+		- Defenses cost resources
+		- Layers may overlap- benefit is not always additive
+- Least Privilege
+	- Users should only get the privileges they need -> Dependent on what permissions an entity/program needs to be able to do its job correctly
+	- Extra privileges, extra risks
+- Separation of Responsibility
+	- Require multiple parties to share a privilege
+	- Reduces risk of abuse - collusion is harder than a single bad actor
+		- e.g. 2 keys required to launch nuclear weapons
+- Ensure Complete Mediation
+	- Ensure that every access point in monitored and protected
+	- Reference monitor: Single point through which all access must occur
+- Don't Rely on Security Through Obscurity
+- Kerckoffs + Shannon's Maxim
+	- Enemy knows the system
+	- Don't rely on obscurity for security 
+	- Assume attacker knows: Algorithms, Code, Configurations
+- Use Fail-Safe Defaults
+- Design in Security from the Start
