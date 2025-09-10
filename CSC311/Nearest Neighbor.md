@@ -33,11 +33,18 @@ return the index (midx) and distance (mindist)
 ##### Noise
 - The algorithm is sensitive to label noise or mis-labeled data (class noise) 
 - Solution: Smooth by having k nearest neighbors vote
-##### K Nearest NeighbourS
+##### K Nearest Neighbours
 - Instead of using closest point, use multiple closest points 
 - K is a hyperparameter which is: 
 	- A setting or configuration external to the model
 	- Chosen before training
 	- Governs how the model is learned
 	- Influences model behaviour and performance
-- 
+##### Curse of Dimensionality
+- As dimensions grow, data space expands exponentially, and points become far apart
+##### Sensitivity to Scale
+- KNN is sensitive to range of features
+	- KNN relies on distance calculations
+	- A feature with a larger range dominates distance calculations
+- Solution: Normalization
+	- mean = 0, var = 1
