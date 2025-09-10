@@ -67,4 +67,3 @@
 	7. Replace GPREGS for user process B
 	8. Last instruction of interrupt handler is iret 
 		- Restores PC, SP, SR, clears interrupt request and resumes execution
-	9. 

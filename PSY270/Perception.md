@@ -1,0 +1,95 @@
+#### Definition
+- Study of how the external world gets represented in our brain so that we can understand and act upon what's going on around us
+#### Agnosia
+- Agnosia is a deficit in recognition despite normal vision 
+- Apperceptive Agnosia: People are unable to name, match or discriminate visually presented objects -> considered as a type of 'blindness' as they are functionally not literally blind 
+	- Since patients can't combine basic visual information into a complete precept therefore they show deficits in copying as well
+- Associative Agnosia: Can combine visual features into a whole (can copy well) but can't associate a visual pattern with meaning -> can't recognize what they see
+	- Their copying is better than the normal person's as they don't have a concept of what they are drawing so they draw it meticulously
+	- Memory captures the concept of things -> just can't match it to something else
+#### Steps to Visual Perception
+- Input/Sensation
+- Basic visual components assembled
+- Meaning is linked to visual input
+#### Experience Error
+- What you see isn't what you get
+	- A lot of filtering/processing before the information reaches consciousness
+- Experience Error is the false assumption that the structure of the world is directly given from our senses
+- Visual illusions illustrate that we don't always perceive an accurate representation of a visual stimulus
+- We do not see a continuous image of the world -> our eyes follow a series of fixation-saccade cycles
+	- saccade -> fast jerking moment, from one point to another
+		- visual perception is suppressed 
+		- on/off but our brain doesn't process it as that
+		- not accurate to what you're perceiving 
+	- fixation -> smooth pursuit movement 
+		- usually accurate to what you're perceiving
+#### Approaches to Study Perception
+- Computational Approach: Concerned with discovering how the brain represents and interprets the distal stimulus (physical stimulus in the environment -> we don't have direct access to it, sensation of what we are perceiving)
+	- Bottom-up and top-down processing
+		- Bottom-up (data driven)
+			- We recognize patterns by analyzing sensory input step-by-step
+			- Cons:
+				- Analyzing each feature one at a time takes a long time
+				- Theories that rely on features can't explain within category discrimination 
+				- Pattern recognition can depend on top-down/conceptually driven effects
+		- Top-down (conceptually driven)
+			- Perception is influenced by our prior knowledge, memories and experiences 
+			- We use what we know about physical properties of the world to perceive 3D objects from 2D images
+			- We use what we know about how the world is structured to perceive 3D objects from 2D images
+	- Idea #1: Template Theory (Outdated + used for computers only) (Bottom-up)
+		- According to template theory, we have a mental 'stencil' for an array of different patterns
+		- Problem: 
+			- Works well in an controlled environment with computers, however, 
+			- How do we predict all possible options? (different fonts, sizes etc.)
+	- Idea #2: Feature Matching (Bottom-up)
+		- We try to match features and we have a system for analyzing each distinct feature of a visual item
+		- Pandemonium (Selfridge, 1959)
+		- Serial and Parallel Processing
+		- Problem: Don't know how to reconfigure features again + only describes 2D objects, can't process 3D objects
+		- Physiological support for feature matching comes from discovery of feature detector neurons in primary visual cortex
+	- Idea #3: Biederman's Recognition by Components (Bottom-up)
+		- Used to address computer vision (believed this is how human vision worked)
+		- Geons are the basic components of 3D objects. They are view-point invariant can recognize geons from any angle) because they have nonaccidental properties (properties that belong to the object and not just perceived by accident) -> but recognition is impaired when we view objects from non-canonical (unusual) viewpoints 
+	- Idea #4: View-based Recognition (Bottom-up)
+		- RBC comes from a long history of computational theories that were not concerned with describing the physical implementation of such systems in humans
+		- Evidence from psychology and physiology does not support a viewpoint invariant approach to object identification
+		- Human appear to have a viewer centered bias
+			- Object recognition is faster from familiar viewpoints
+			- Cortical neurons demonstrate viewpoint specificity
+- Gestalt Approach: Uses organizational principles to create meaningful perception of the environment
+- Perception/action Approach: Assumes the goals of action help determine perception
+- Proximal Stimulus: What we do have access to -> representation of what we perceive
+- Major difference between approaches is whether the goal of perception is recognition or action 
+#### Gestalt (Bottom-up)
+- Gestalt psychology is concerned with how perception gets organized into meaningful units
+- 'The whole is different than the sum of its parts'
+- Gestalt grouping principles identify characteristics of perception which help determine which components of a stimulus group together
+- We can use these rules to predict what will be perceived based on one law at a time, it is hard to predict the outcome of combining laws -> still remarkably robust
+- Law of Proximity: Items that are close together are grouped together 
+	- Any similarities cause items to be grouped together (e.g. colour, size, distance)
+- Law of Common Region: Items within a common region are grouped together
+- Role of Experience: If things have been associated in prior viewings, they will be grouped together in the future
+#### Perception/Action
+- The embodied cognition approach came from Gibson's 'direct perception' approach
+- The environment contains all the information we need for perception
+- The goal of perception is an action 
+- Laboratory experiments (using 2D images) only study indirect perception
+- The ambient optic array is the structure imposed on light by the environment and contains all the information we need for perception 
+- Motion is necessary to 'pick up' the required information from the optic array
+- Motion is described by optic flow in the ambient optic array: 
+	1. If there is flow in the optic array, the observer is in motion
+	2. The direction of flow indicates the direction the observer is moving
+- According to Gibson, the goal of perception is not a visual description of the world, it's an action 
+- The goal of perception is to provide a perceiver with information about objects' affordances 
+- Gibson's direct perception is an extreme approach in which affordances directly connect perception and action without the need for intervening cognitive processes
+	- No perceptual representation (no proximal stimulus)
+	- No role of memory (no top-down processing)
+- Unlike Gibson's view, most modern researchers believe both action and representations are involved in perception, but that action influences how we perceive the world
+- Evidence from lesion studies suggests that there are 2 anatomical pathways for object recognition
+	- Dorsally through the Parietal Lobe
+	- Imaging studies have revealed different areas of activation for perception of faces, places, and objects
+- Deficits in motion perception and action have been dissociated from object identification 
+	- Ideomotor Apraxia (damage to 'where' pathway)
+	- Agnosia's result from damage to the 'what' pathway
+	- Blindsight is a result of cortical damage to visual areas and results in a dissociation of visual recognition and vision for action
+- 
