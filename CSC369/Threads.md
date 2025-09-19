@@ -1,0 +1,75 @@
+#### Functions
+- mmap(): Another way to create shared memory regions
+- shmget(): Sys call to allocate a shared memory segment
+- shmat(): Map a shared memory segment to local address
+#### Parallel Programs
+- To execute a parallel program using fork(), we need to:
+	- Create several processes that execute in parallel
+	- Cause each to map to the same address space to share data
+	- Have the OS schedule these processes in parallel
+- Inefficient as:
+	- Space: everything is duplicated
+	- Time: Creating data structures, forking, copying address space
+	- Inter-Process Communication (IPC): More work to share and communicate across isolated processes
+####  Thread 
+- Idea: Separate the address space from the execution state -> multiple programs can run in a single address space
+	- Implicit Sharing -> Can solve a single problem concurrently and can easily share code, heap and global variables -> simpler programming model
+	- Lighter weight -> faster to create/destroy and potentially faster context switch times
+	- Concurrent programming performance gains -> overlapping computation and I/O
+- A threat is a single control flow through a program 
+	- Control flow -> sequence of instructions in execution
+	- Represented as a path taken throughout program code
+- Program with multiple control flows is multithreaded -> OS is multithreaded by definition as it interacts with multiple running programs
+- List of Things Shared Between Threads:
+	- File Descriptors
+	- Code
+	- Heap
+	- Static Data
+- List of Things Exclusive Between Threads:
+	- CPU Registers
+- Not exclusive and not shared:
+	- Stack
+#### Kernel Level Threads
+- Modern OSs already have thread abstraction
+	- To make concurrency cheaper
+- OS now manages threads and processes
+	- All thread operations are implemented in the kernel
+	- The OS schedules all of the threads in the system
+- Called kernel-level threads/lightweight processes
+	- fork is not a sys call in Linux -> substituted with clone 
+	- No difference between kernel and processes in modern Linux
+- Limitations:
+	- For fine-grained concurrency, kernel-level threads still suffer from too much overhead
+		- sys calls are still required
+		- kernel-level threads have to be general to support the needs of all programmers, languages, and runtimes etc
+		- no control over scheduling of threads
+- To make threads cheap + fast -> need to be implemented at user level
+	- Kernel threads are managed by the OS and user-level threads are managed by the rum-time system
+	- User-level threads are small and fast
+		- Thread is represented by PC, registers, stack and TCB
+		- Procedure calls used for creating new threads/ switching between etc (no kernel needed)
+		- User-level thread operations are 100x faster than kernel-level threads
+			- Depends on quality of both implementations
+- User-level threads are not a perfect solution
+	- They are not well-integrated with the OS
+	- Can cause OS to make poor decisions
+		- Scheduling a process with idle threads
+		- Blocking a process whose thread initiated an I/O even though the process has other threads that can execute
+		- De-scheduling a process with a thread holding a lock
+	- Solving this requires communication between OS and thread library
+- POSIX threads:
+	- Standardized C language threads programming API
+	- Known as pthreads
+	- Specifies interface, not implementation
+		- Can be kernel-level, user-level or a hybrid
+		- Linux pthreads implementation uses kernel-level threads
+#### Python vs. Node.JS in multi-threading
+Python:
+- Uses kernel-level threads-> constrained by Global Interpreter Lock (GIL) -> only one thread executes Python bytecode at a time
+- True parallelism blocked for CPU-bound tasks
+- Suitable for I/O-bound workloads with threading or asyncio (?)
+Node.js:
+- Uses user-level threading via event loop + libuv
+- Single-threaded JS execution
+- Concurrency achieved with non-blocking I/O and callbacks/promises
+- Heavy tasks can be delegated to worker threads or thread pool

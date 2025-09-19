@@ -1,0 +1,79 @@
+- Attention is the process of concentrating mental effort on sensory or mental events
+	- Limited capacity
+	- Varies along certain dimensions
+		- Exogenous-endogenous
+			- Exogenous is external control, while endogenous attention is internal control
+		- Overt-covert
+			- Overt attention is visibly focusing on something while covert attention is not visibly focusing
+		- Automatic-controlled 
+			- More attention for control
+- Attention is closely linked to consciousness but they are not synonymous 
+	- Change blindness: Happens when people fail to notice large changes in their visual environment
+	- Inattentional blindness: Happens when people fail to notice an unexpected object in plain sight 
+#### Attention is Driven By:
+- Salient stimulus
+	- Motion
+	- Colour
+	- Brightness
+	- Contrast
+	- Orientation
+- Attention can be driven by other important information and previous knowledge
+#### Filter Theories of Attention
+- Selective Attention:
+	- Filter theories believe attention acts like a bottleneck that only lets some information through at a time -> the attentional filter selects attended information for processing and filters out everything else
+- Dichotic Listening Task: Psychological test where two different auditory stimuli are presented simultaneously -> investigates selective attention
+	- People did not notice the meaning of the message in the unattended ear but they noticed that sensory information was being provided
+- Broadbent's Early Selection Filter Model: Input -> Sensory Memory -> Filter -> Detector -> Long-term Memory
+	- Proposed on the basis of results from dichotic listening tasks
+	- Problems:
+		- People are aware of their own name in an unattended message
+		- Participants follow a meaningful message in the unattended ear
+- Triesman's Attenuation Model: Attenuator -> Dictionary Unit -> Memory
+	- Same as Broadbent's
+	- Attended signal is stronger than other stimuli after passing through the filter but 
+		- Unattended stimuli mahy be more intense, important or likely
+#### Capacity Theories of Attention
+- Divided Attention:
+	- Fixed amount of attentional resources that we can use to perform mental work 
+		- More cognitive load = more attentional resources used
+		- Have some control over how we allot these resources
+	- Flanker Compatibility Task: Demonstrates attention spill-over with low load tasks 
+- With practice controlled processes can become automatic:
+	- Automatic Processes:
+		- Do not require attention
+		- Fast
+		- Parallel
+		- Can't be modified once started
+	- Controlled Processes:
+		- Require attention
+		- Slow
+		- Serial
+		- Under conscious control
+- Stroop Task: Individuals have difficulty naming the ink color of a word where the word represents a different colour
+- While driving, we are less able to detect sudden changes or react quickly when using cell phones 
+- Cowan suggests we can attend $4 \pm 1$ items at one time -> multi-object tracking 
+#### Attention as a Spotlight
+- Vigilance
+- Attention acts like a unitary spotlight, moving through space
+- Valid trial: Cue correctly predicts the target's location -> faster/more accurate performance
+- Invalid trial: Cue misleads the participant, pointing to the wrong location
+- Neutral trial: Provides no information about the target's location -> baseline
+- We can selectively attend objects in the same spatial location
+#### Attention as a Feature Binder
+- From research in visual perception and questions from philosophy, attention researchers are faced with the binding problem
+	- How do separate features combine into a single object?
+	- How do brain processes construct phenomenological experience?
+- Patient data indicates that object feature identification can occur without binding -> item features outside of conscious awareness are not bound
+- Therefore, one role of attention may be to bind features 
+- Visual search tasks involves using attention to focus on object features in a particular location 
+	- Feature Search: Searching for one feature
+	- Conjunction Search: Searching for multiple features together
+- Usually, a visual search task in a lab has 3 independent variables:
+	- Type of search 
+	- Number of distractors 
+	- Presence of target
+	- Dependent Variable -> Reaction time to respond
+- According to feature integration theory, visual search is a 2-stage process
+	1. Single feature does not require attention and 'pops out' automatically -> preattentive stage
+	2. Binding features requires attention -> focused attention stage
+- Object -> Preattentive Stage -> Focused Attention Stage -> Perception

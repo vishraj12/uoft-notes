@@ -1,0 +1,14 @@
+#### Definition:
+- Indistinguishability under CPA 
+- Threat Model: adversary can launch a CPA -> can request encryptions of arbitrary messages of their choice
+- Game: adversary submits two equal-length messages $M_0$, $M_1$ -> Challenger encrypts one at random and returns the ciphertext
+- Requirement: adversary can't distinguish what is encrypted except with probability 1/2 + negligible 
+- Formalized as games adversaries try to win
+- Adversary wins if it correctly guesses whether $M_0$ or $M_1$ was encrypted
+- Don't assume a specific strategy -> represent all possible strategies
+- Baseline: If randomly guessing -> success probability = $1/2$
+- Insecurity: Strategy with success > $1/2$ -> ciphertext leaks information
+- Security: Efficient adversaries, success <= $1/2$ + negligible
+- Negligible Advantage:
+	- e.g with a k-bit key, advantages = $O(1/2^k)$
+	- Rule of Thumb: $2^{80}$ work is currently infeasible -> but security thresholds evolve with time and threat models

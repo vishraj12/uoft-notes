@@ -1,0 +1,60 @@
+#### History
+- Caesar Cipher:
+	- Among the earliest cryptographic schemes
+	- Key Generation -> Between 0-25
+	- Enc(K,M) -> Shift each letter in the message forward by K positions
+	- Dec(K,C) -> Shift each letter in the ciphertext backward by K positions
+	- Can be solved by brute-forcing or leveraging the English language
+- Substitution Cipher:
+	- Each letter is mapped to a different letter -> no constant shift
+	- Key Generation -> create a random, one-to-one mapping of all 26 items
+	- Enc(K,M) -> Replace each letter in the message using mapping K
+	- Dec(K,C) -> Replace each ciphertext letter using the reverse mapping
+	- Can be solved by brute-forcing, CPA and Cryptoanalysis (exploiting patterns in English)
+- Rotor Ciphers: 
+	- Mechanical encryption devices using rotating wheels
+	- Popular in late 19th and early 20th centuries
+	- Famous example: Enigma
+		- Used 3-5 rotors -> Each rotor = fixed letter permutation
+		- Ended with a reflector -> sent signal back through rotors
+		- Included a plugboard -> extra letter swaps before/after rotors
+		- Mechanism:
+			- Press a key -> current passes through plugboard, rotors, reflector and then back -> light up output letter
+			- After each key press, first rotor advances
+			- Full rotation carries into the next rotor
+		- How Enigma Encryption Worked:
+			- Choose rotors, rotor order, initial positions and plugboard wiring
+			- Key Space = $2^{67}$
+			- Enc/Dec -> Input rotor settings K into Enigma and type each letter -> lampboard shows encrypted output 
+		- Faults:
+			- Known plaintext attacks: Germans often sent predictable text
+			- Kerckhoff's Principle: Security relied on the machine
+			- Chosen-plaintext attacks: Allies could provoke predictable responses
+			- Brute-force: 
+			- Design weakness: No letter ever encrypted to itself -> narrowed search 
+#### Modern Cryptography
+- Mathematical era: Security dependent on rigor not obscurity
+- Public-key revolution -> Number theory in cryptography -> Focus of the course
+- 2 models of keys:
+	- Symmetric key model: Alice and Bob both know the value of the same key
+	- Asymmetric key model: Each user has a secret key and a public key
+#### 3 Goals of Cryptography (CIA)
+- Confidentiality -> Prevents adversaries from reading our messages
+	- Better definition: [[IND-CPA]]
+- Integrity -> Prevents adversaries from modifying messages undetected
+- Authenticity -> Ensures a message really comes from the claimed sender
+	- Authenticity requires integrity
+#### Kerckhoff's Principle
+- Security must depend on the secrecy of keys not the secrecy of the design. 
+- No security through obscurity -> assume attacker knows the system
+- Key should be the only secret -> everything is tested encouraging open standards and peer review
+- If a key is leaked, easier to replace the key than the system
+- Shannon's Maxim -> attacker knows the algorithms (Related to this)
+#### Threat Models
+- Ciphertext-Only Attack: Attacker has access only to ciphertexts (no plaintexts)
+	- Interrupting encrypted messages
+- Known-Plaintext Attack (KPA): Attacker knows some plaintext-ciphertext pairs but can't choose them
+	- Frequency analysis on substitution ciphers
+- Chosen-Plaintext Attack (CPA): Attack can choose arbitrary plaintexts and obtain corresponding ciphertexts
+	- Submitting messages to an encryption oracle and observing outputs
+- Chosen-Ciphertext Attack (CCA): Attacker can choose arbitrary ciphertexts and corresponding plaintexts (decryption oracle) but not the ciphertext. 
